@@ -5,12 +5,14 @@
     --table-color: #FFEDDF;
     --header-color: #5DD9C1;
     --tasklist-color: #000000;
+    --hover-color: #00d3a9;
+    --active-color: #00b3d3;
     --h1-fw: 900;
     --h2-fw: 400;
     --text-fw: 200;
 }
 
-* {
+*, html {
     box-sizing: border-box;
 }
 
@@ -82,7 +84,7 @@ ul {
         }
 
         &:active {
-            color: #00b3d3;
+            color: var(--active-color);
         }
 
         &:focus {
@@ -102,7 +104,6 @@ ul {
 
 .list-table {
     max-width: 360px;
-    padding: 2rem;
 }
 
 .tasklist {
@@ -202,11 +203,11 @@ ul {
         transition: background-color 250ms ease-in;
 
         &:hover {
-            background-color: #00d3a9;
+            background-color: var(--hover-color);
         }
 
         &:active {
-            background-color: #00b3d3;
+            background-color: var(--active-color);
         }
     }
 }
@@ -228,11 +229,11 @@ ul {
     transition: color 250ms ease-in;
 
     &:hover {
-        color: #00d3a9;
+        color: var(--hover-color);
     }
 
     &:active {
-        color: #00b3d3;
+        color: var(--active-color);
     }
 }
 
@@ -256,7 +257,84 @@ ul {
     .list-table {
         max-width: 360px;
         padding: 0 2rem 2rem;
+        height: 80vh;
     }
+
+    .title {
+        height: 20vh;
+    }
+
+    .list-creator {
+        background-color: rgb(223, 223, 223);
+        max-width: 360px;
+        height: 100vh;
+        max-width: 412px;
+    }
+    
+    .table {
+    
+        &__title {
+            margin-top: -2rem;
+            font-weight: var(--h2-fw);
+            font-size: 2rem;
+        }
+    
+        &__lists {
+            font-weight: var(--text-fw);
+            font-size: 1.4rem;
+            padding: 0;
+            letter-spacing: 2px;
+            line-height: 1.8;
+        }
+    
+        &__form input {
+            margin: 1rem 0 1rem 0;
+            width: 200%;
+            height: 2rem;
+        }
+    }
+
+    .form__label {
+        font-size: 1.4rem;
+    }
+
+    .form__input {
+        margin: 1rem 0 1rem 0;
+        width: 70%;
+        height: 2rem;
+    }
+
+    .form__submit {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 10rem;
+        height: 2rem;
+        font-size: 1.4rem;
+        margin: 0;
+    }
+
+    .container {
+        width: 100vw;
+    }
+
+    #delete-done-tasks,
+    #delete-list {
+        font-size: 1rem;
+    }
+
+    .tasklist {
+    
+        &__title {
+            width: 200px;
+        }
+
+        &__items {
+            display: block;
+            margin-bottom: -25px;
+        }
+    }
+
 }
 
 
