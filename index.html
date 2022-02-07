@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="title">
+                Simple To-Do List Creator
+            </h1>
+        </header>
+        <main>
+            <section class="list-table">
+                <div class="table">
+                    <h2 class="table__title">
+                        My Lists
+                    </h2>
+                    <ul class="table__lists">
+                        <!-- <li class="table__list table__list-active">Hometasks</li>
+                        <li class="table__list">Workflow</li>
+                        <li class="table__list">Study</li> -->
+                    </ul>
+                    <form action="" id="table-form" class="table__form form">
+                        <label class="form__label" for="table-input">Add a List</label>
+                        <input id="table-input" class="form__input" type="text" maxlength="20" minlength="1" placeholder="Add a New List" aria-label="New List">
+                        <button class="form__submit" aria-label="Add a List">Add</button>
+                    </form>
+                </div>
+            </section>
+            <section class="list-creator">
+                <div class="tasklist">
+                    <div class="tasklist__header">
+                        <h2 class="tasklist__title">Study</h2>
+                        <p class="tasklist__items">3 tasks remaining</p>
+                    </div>
+                    <div class="tasklist__tasks">
+                        <!-- <div class="tasklist__input">
+                            <input type="checkbox" id="task-1" class="tasklist__task">
+                            <label for="task-1">
+                                <span class="custom-checkbox"></span>
+                                BEM</label>
+                        </div>
+                        <div class="tasklist__input">
+                            <input type="checkbox" id="task-2" class="tasklist__task">
+                            <label for="task-2">
+                                <span class="custom-checkbox"></span>
+                                Array methods</label>
+                        </div>
+                        <div class="tasklist__input">
+                            <input type="checkbox" id="task-3" class="tasklist__task">
+                            <label for="task-3">
+                                <span class="custom-checkbox"></span>
+                                Practice: create a todo list</label>
+                        </div> -->
+                    </div>
+                    <form action="" id="tasklist-form" class="tasklist__form form">
+                        <label class="form__label" for="tasklist-input">Add a Task</label>
+                        <input id="tasklist-input" class="form__input" type="text" maxlength="30" minlength="1"placeholder="Add a New Task" aria-label="New Task">
+                        <button class="form__submit" aria-label="Add a Task">Add</button>
+                    </form>
+                </div>
+                <div class="buttons">
+                    <button id="delete-done-tasks" class="clear-done" aria-label="Clear Done Tasks">Clear Done Tasks</button>
+                    <button id="delete-list" class="clear-done" aria-label="Delete List">Delete List</button>
+                </div>
+            </section>
+        </main>
+        <footer></footer>
+    </div>    
+</body>
+</html>
+

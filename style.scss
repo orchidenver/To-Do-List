@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;400;900&display=swap');
+
+:root {
+    --bacground-color: #14213D;
+    --table-color: #FFEDDF;
+    --header-color: #5DD9C1;
+    --tasklist-color: #000000;
+    --h1-fw: 900;
+    --h2-fw: 400;
+    --text-fw: 200;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    // min-height: 100vh; 
+    background-color: var(--bacground-color);
+    font-family: 'Titillium Web', sans-serif;
+    // overflow: hidden;
+}
+
+main {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    margin: 0 auto;
+    width: 50vw;
+    max-width: 1200px;
+    min-width: 360px;
+}
+
+
+
+.title {
+    color: var(--header-color);
+    font-weight: var(--h1-fw);
+    font-size: calc(1vw + 2rem);
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.table {
+    color: var(--table-color);
+    max-width: 50%;
+    min-width: 160px;
+    padding: 10px;
+    margin-top: -20px;
+
+    &__title {
+        font-weight: var(--h2-fw);
+    }
+
+    &__lists {
+        font-weight: var(--text-fw);
+        padding: 0;
+        letter-spacing: 2px;
+        line-height: 1.8;
+    }
+
+    &__list {
+        cursor: pointer;
+        padding-left: 0.5rem;
+        transition: color 250ms ease-in;
+
+        &-active {
+            font-weight: bolder;
+            color: var(--header-color);
+            letter-spacing: 2px;
+        }
+
+        &:hover {
+            color: var(--header-color);
+        }
+
+        &:active {
+            color: #00b3d3;
+        }
+
+        &:focus {
+            font-weight: bold;
+        }
+    }
+
+    &__form input {
+        width: 120%;
+    }
+}
+
+.list-creator {
+    background-color: rgb(223, 223, 223);
+    max-width: 360px;
+}
+
+.list-table {
+    max-width: 360px;
+    padding: 2rem;
+}
+
+.tasklist {
+    color: var(--tasklist-color);
+
+    &__header {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5rem;
+        background-color: rgb(179, 179, 179);
+    }
+
+    &__title {
+        font-weight: var(--h2-fw);
+        font-size: 1.2rem;
+        margin: 0;
+    }
+
+    &__items {
+        font-weight: var(--text-fw);
+        font-size: 0.8rem;
+        margin-left: 1rem;
+    }
+
+    &__tasks {
+        padding: 1rem 2rem 0;
+        letter-spacing: 1px;
+    }
+
+    &__task {
+        font-weight: var(--text-fw);
+        // прячем чекбоксы
+        opacity: 0;
+        position: absolute;
+
+        &:focus + label .custom-checkbox {
+            transform: scale(1.2);
+        }
+
+        &:checked + label .custom-checkbox {
+            background-color: var(--header-color);
+        }
+
+        &:checked + label {
+            opacity: 0.15;
+        }
+
+    }
+
+    &__input {
+        position: relative;
+
+        &:hover .custom-checkbox {
+            transform: scale(1.2);
+        }
+
+    }
+
+}
+
+#tasklist-form {
+    padding: 0 2rem 0;
+}
+
+.form {
+    margin-top: 2em;
+    
+    &__label {
+        display: block;
+    }
+
+    &__input {
+        display: block;
+        border: none;
+        width: 100%;
+        height: 20px;
+
+        &:focus {
+           outline: 1px solid #5DD9C1; 
+        }
+
+        &:focus::placeholder {
+            opacity: 0.5; 
+         }
+    }
+
+    &__submit {
+        background-color: var(--header-color);
+        font-family: 'Titillium Web', sans-serif;
+        margin-top: 0.5rem;
+        width: 5rem;
+        border: 1px solid transparent;
+        cursor: pointer;
+        letter-spacing: 1px;
+        transition: background-color 250ms ease-in;
+
+        &:hover {
+            background-color: #00d3a9;
+        }
+
+        &:active {
+            background-color: #00b3d3;
+        }
+    }
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2rem 2rem;
+}
+
+.clear-done {
+    font-family: 'Titillium Web', sans-serif;
+    letter-spacing: 1px;
+    background-color: transparent;
+    border: 1px solid transparent;
+    margin-top: 2rem;
+    width: 8rem;
+    cursor: pointer;
+    transition: color 250ms ease-in;
+
+    &:hover {
+        color: #00d3a9;
+    }
+
+    &:active {
+        color: #00b3d3;
+    }
+}
+
+.custom-checkbox {
+    display: inline-block;
+    width: 0.75em;
+    height: 0.75em;
+    cursor: pointer;
+    border: 1px solid #5DD9C1;
+    border-radius: 50%;
+    margin-left: 0.5em;
+    transform: scale(1);
+    transition: transform 300ms ease-in-out;
+}
+
+@media screen and (max-width: 600px) {
+    main {
+        display: block;
+    }
+
+    .list-table {
+        max-width: 360px;
+        padding: 0 2rem 2rem;
+    }
+}
+
+
+
