@@ -31,8 +31,9 @@ function render () {
 
     // Отображаем данные о списке дел
     const selectedList = listsArray.find(list => list.id === selectedListId);
-    if (!selectedListId) {
+    if (!selectedList) {
         listDisplayContainer.style.display = 'none';
+        console.log('rrrr');
     } else {
         listDisplayContainer.style.display = '';
         listTitleElement.textContent = selectedList.title;
@@ -107,6 +108,8 @@ function removeElementsFromList (list) {
 }
 
 render();
+
+
 
 // E V E N T S
 createListForm.addEventListener('submit', e => {
